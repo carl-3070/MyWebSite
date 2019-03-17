@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block main %}
+  <header class="masthead" style="background-image: url('img/home-bg.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>技术人生</h1>
+            <span class="subheading">A Blog From X</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        {% for post in post_list %}
+        <div class="post-preview">
+          <a href="{{ post.get_absolute_url }}">
+            <h2 class="post-title">
+              {{ post.title }}
+            </h2>
+            <h3 class="post-subtitle">
+              {{ post.sub_title }}
+            </h3>
+          </a>
+          <p class="post-meta">{{ post.created_time }}</p>
+        </div>
+            <hr>
+        {% empty %}
+            <div class="no-post">暂时还没有发布的文章！</div>
+        {% endfor %}
+
+        <!-- Pager -->
+        <div class="clearfix">
+          <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+{% endblock main %}
