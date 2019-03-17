@@ -5,11 +5,7 @@ from .models import Post
 
 # Create your views here.
 
-def home(request):
-    context = {}
-    blog_list = Post.objects.all().order_by('-created_time')
-    context["last_blog"] = blog_list[1]
-    return render(request, 'blog/home.html', context)
+
 
 def index(request):
     post_list = Post.objects.all().order_by('-created_time')
