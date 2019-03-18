@@ -7,7 +7,7 @@
 ## To do list
 - [x] 服务器：aws ec2
 - [x] 域名：www.xiequanquan.com.cn
-- [ ] 后台：python + django 实践
-- [ ] 前台：bootstrap, jquery
-- [ ] 数据库：sqllite
-- [ ] 结合markdown更新
+- [x] 后台：python + django 实践
+- [x] 前台：bootstrap, jquery
+- [x] 数据库：mysql
+- [x] 结合markdown更新
