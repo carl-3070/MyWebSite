@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Arcadia Free Bootstrap Template - Home Page</title>
+    <title>谢全泉的个人网站</title>
     <meta name="description" content="Your Description Here">
     <meta name="keywords" content="free boostrap, bootstrap template, freebies, free theme, free website, free portfolio theme, portfolio, personal, cv">
     <meta name="author" content="Jenn, ThemeForces.com">
@@ -58,11 +58,8 @@
 
     <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+	<a class="navbar-brand" href="#">谢全泉的个人网站</a>
     <div class="container">
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        Menu
-        <i class="fas fa-bars"></i>
-      </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
@@ -115,17 +112,23 @@
                         <h2>谢全泉的博客</h2>
                         <hr>
                     </div>
-                    <div class="post-preview">
-                      <a href="{{ last_blog.get_absolute_url }}">
-                        <h2 class="post-title">
-                          {{ last_blog.title }}
-                        </h2>
-                        <h3 class="post-subtitle">
-                          {{ last_blog.sub_title }}
-                        </h3>
-                      </a>
-                      <p class="post-meta">{{ last_blog.created_time }}</p>
-                    </div>
+                    {% for post in post_list %}
+					<div class="post-preview">
+					  <a href="{{ post.get_absolute_url }}">
+						<h2 class="post-title">
+						  {{ post.title }}
+						</h2>
+						<h3 class="post-subtitle">
+						  {{ post.sub_title }}
+						</h3>
+					  </a>
+					  <p class="post-meta">{{ post.created_time }}</p>
+					</div>
+					<hr>
+					{% empty %}
+						<div class="no-post">暂时还没有发布的文章！</div>
+					{% endfor %}
+					
                     <a href="#services" class="down-btn page-scroll">
                         <span class="fa fa-angle-down"></span>
                     </a>
