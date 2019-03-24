@@ -112,17 +112,17 @@
                         <h2>谢全泉的博客</h2>
                         <hr>
                     </div>
-                    {% for post in post_list %}
+                    {% for blog in last_blog %}
 					<div class="post-preview">
-					  <a href="{{ post.get_absolute_url }}">
+					  <a href="{{ blog.get_absolute_url }}">
 						<h2 class="post-title">
-						  {{ post.title }}
+						  {{ blog.title }}
 						</h2>
 						<h3 class="post-subtitle">
-						  {{ post.sub_title }}
+						  {{ blog.sub_title }}
 						</h3>
 					  </a>
-					  <p class="post-meta">{{ post.created_time }}</p>
+					  <p class="post-meta">{{ blog.created_time }}</p>
 					</div>
 					<hr>
 					{% empty %}

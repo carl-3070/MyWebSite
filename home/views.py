@@ -6,5 +6,5 @@ def home(request):
     context = {}
     blog_list = Post.objects.all().order_by('-created_time')
     if blog_list != []:
-        context["last_blog"] = blog_list[0]
+        context["last_blog"] = blog_list[0:2]
     return render(request, 'home/home.html', context)
