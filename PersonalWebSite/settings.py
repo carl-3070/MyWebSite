@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blog.apps.BlogConfig',
     'home.apps.HomeConfig',
+    'essay.apps.EssayConfig',
     'mdeditor',
 ]
 
